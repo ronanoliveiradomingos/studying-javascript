@@ -1,21 +1,12 @@
-let animals = {
-    walk() {
-        if (!this.isSlepping) {
-            console.log("I walk");
-        }
-    },
-    sleep() {
-        this.isSlepping = true;
-    }
-};
+function state() {
+    console.log(this.name);
+}
 
-let rabbit = {
-    name: "White Rabbit",
-    __proto__: animals
-};
+var name = "NY";
 
+var obj1 = { name: "IN", state: state };
+var obj2 = { name: "CA", state: state };
 
-rabbit.sleep();
-
-console.log(rabbit.isSlepping);
-console.log(animals.isSlepping);
+state(); // NY
+obj1.state(); // IN
+obj2.state(); // CA
